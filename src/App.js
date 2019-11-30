@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import "./App.css";
+import classes from "./App.css";
 
 import Input from "./components/Input/Input";
 import Weather from "./components/Weather/Weather";
@@ -101,12 +101,13 @@ class App extends Component {
     }
 
     if (this.state.error) {
-      showError = <p>Please type another city.</p>;
+      showError = <p className={classes.Error}>Please type another city.</p>;
     }
 
     return (
-      <div className="App">
+      <div className={classes.App}>
         {showError}
+        <h1 className={classes.Header}>Weather forecast for cities</h1>
         <Input showWeather={this.getWeatherData} />
         {showWeather}
         {showMoreInfo}
