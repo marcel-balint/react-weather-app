@@ -1,12 +1,13 @@
 import React from "react";
+import classes from "./Weather.css";
 
 const Weather = props => {
   return (
     <div>
-      <h3>
+      <h3 className={classes.Heading}>
         Weather in {props.city}, {props.country}:
       </h3>
-      <div>
+      <div className={classes.WeatherBox}>
         <p> {props.description}</p>
         <p>
           <strong>{props.mainTemperature}&deg;C</strong>

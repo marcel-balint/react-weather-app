@@ -1,0 +1,22 @@
+.WeatherBox {
+  margin: 0 auto;
+  animation: scale 2s 1;
+}
+
+.WeatherBox p {
+  font-size: 19px;
+}
+
+.MoreBtn {
+  width: 100px;
+  height: 20px;
+  margin: 0 auto;
+  background-color: #7096a7;
+  text-transform: uppercase;
+  color: #fff;
+  border: 0;
+  padding: 7px;
+  font-size: 14px;
+  border-radius: 4px;
+  cursor: pointer;
+}

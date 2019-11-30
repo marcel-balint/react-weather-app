@@ -29,3 +29,10 @@
   background-color: #179da1;
   cursor: pointer;
 }
+
+.Search:hover {
+  background-color: #0da8ad;
+}
+.Search:focus {
+  outline: none;
+}
