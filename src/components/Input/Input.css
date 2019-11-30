@@ -36,3 +36,9 @@
 .Search:focus {
   outline: none;
 }
+
+@media (max-width: 450px) {
+  .Input {
+    width: 250px;
+  }
+}
