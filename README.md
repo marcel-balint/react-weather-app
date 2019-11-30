@@ -1,6 +1,8 @@
 ## Weather app
 
-Weather application build with React which uses [OpenWeatherMap](https://openweathermap.org/api) API to display weather information for a particular city as follows: the **main temperature** of the day, **maximum temperature** expected, **minimum temperature** expected, **wind speed** (in m/s), **humidity** in percentages , **cloudiness** in percentages and **amospheric pressure**. All temperatures are displayed in _[Celsius](https://en.wikipedia.org/wiki/Celsius)_.
+A live demo can be found [here](https://marcel-balint.github.io/react-weather-app/).
+
+Weather application build with React which uses [OpenWeatherMap](https://openweathermap.org/api) API to display weather information for a particular city as follows: the **main temperature** of the day, the **maximum temperature** expected, the **minimum temperature** expected, **wind speed** (in m/s), **humidity** in percentages , **cloudiness** in percentages and **amospheric pressure**. All temperatures are displayed in _[Celsius](https://en.wikipedia.org/wiki/Celsius)_.
 
 ## Features
 

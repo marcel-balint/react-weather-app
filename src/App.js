@@ -29,7 +29,7 @@ class App extends Component {
     try {
       const city = e.target.elements.text.value;
       const getData = await fetch(
-        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}`
+        `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}`
       );
       const parsedData = await getData.json();
       this.setState({
