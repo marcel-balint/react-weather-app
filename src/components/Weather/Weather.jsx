@@ -17,6 +17,7 @@ const Weather = props => {
         <p>
           Min: <strong>{props.temp_min}&deg;C</strong>
         </p>
+        <span onClick={props.showInfo}>More Info</span>
       </div>
     </div>
   );

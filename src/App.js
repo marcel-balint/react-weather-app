@@ -19,6 +19,8 @@ class App extends Component {
     humidity: null,
     wind: null,
     cloudiness: null,
+    loaded: false,
+    moreInfo: false,
     error: false
   };
 
@@ -31,6 +33,7 @@ class App extends Component {
       );
       const parsedData = await getData.json();
       this.setState({
+        moreInfo: false,
         city: parsedData.name,
         country: parsedData.sys.country,
         mainTemperature: parsedData.main.temp,
@@ -41,6 +44,7 @@ class App extends Component {
         humidity: parsedData.main.humidity,
         wind: parsedData.wind.speed,
         cloudiness: parsedData.clouds.all,
+        loaded: true,
         error: false
       });
     } catch (error) {
@@ -48,8 +52,13 @@ class App extends Component {
     }
   };
 
+  handleMoreInfo = () => {
+    this.setState({ moreInfo: true });
+  };
+
   render() {
     let showError = null;
+    let showMoreInfo = null;
     let showWeather = null;
 
     if (this.state.loaded) {
@@ -61,10 +70,24 @@ class App extends Component {
           temp_max={this.state.temp_max}
           temp_min={this.state.temp_min}
           description={this.state.description}
+          showInfo={this.handleMoreInfo}
         />
       );
     } else {
       showWeather = null;
+    }
+
+    if (this.state.moreInfo) {
+      showMoreInfo = (
+        <MoreInfo
+          pressure={this.state.pressure}
+          humidity={this.state.humidity}
+          wind={this.state.wind}
+          clouds={this.state.cloudiness}
+        />
+      );
+    } else {
+      showMoreInfo = null;
     }
 
     if (this.state.error) {
@@ -76,12 +99,7 @@ class App extends Component {
         {showError}
         <Input showWeather={this.getWeatherData} />
         {showWeather}
-        <MoreInfo
-          pressure={this.state.pressure}
-          humidity={this.state.humidity}
-          wind={this.state.wind}
-          clouds={this.state.cloudiness}
-        />
+        {showMoreInfo}
       </div>
     );
   }
