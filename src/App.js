@@ -13,7 +13,11 @@ class App extends Component {
     mainTemperature: null,
     temp_max: null,
     temp_min: null,
-    description: ""
+    description: "",
+    pressure: null,
+    humidity: null,
+    wind: null,
+    cloudiness: null
   };
 
   getWeatherData = async e => {
@@ -30,7 +34,11 @@ class App extends Component {
       mainTemperature: parsedData.main.temp,
       temp_max: parsedData.main.temp_max,
       temp_min: parsedData.main.temp_min,
-      description: parsedData.weather[0].description
+      description: parsedData.weather[0].description,
+      pressure: parsedData.main.pressure,
+      humidity: parsedData.main.humidity,
+      wind: parsedData.wind.speed,
+      cloudiness: parsedData.clouds.all
     });
   };
 
