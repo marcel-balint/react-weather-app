@@ -61,6 +61,10 @@ class App extends Component {
     return celsius;
   };
 
+  capitalizeFirst = str => {
+    return str[0].toUpperCase() + str.slice(1);
+  };
+
   render() {
     let showError = null;
     let showMoreInfo = null;
@@ -74,7 +78,7 @@ class App extends Component {
           mainTemperature={this.convertToCelsius(this.state.mainTemperature)}
           temp_max={this.convertToCelsius(this.state.temp_max)}
           temp_min={this.convertToCelsius(this.state.temp_min)}
-          description={this.state.description}
+          description={this.capitalizeFirst(this.state.description)}
           showInfo={this.handleMoreInfo}
         />
       );
