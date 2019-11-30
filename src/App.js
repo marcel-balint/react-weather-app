@@ -3,6 +3,7 @@ import "./App.css";
 
 import Input from "./components/Input/Input";
 import Weather from "./components/Weather/Weather";
+import MoreInfo from "./components/MoreInfo/MoreInfo";
 
 const Api_Key = "79b63a8e14c9e0cb2d5cfaf0d76b208a";
 
@@ -53,6 +54,12 @@ class App extends Component {
           temp_max={this.state.temp_max}
           temp_min={this.state.temp_min}
           description={this.state.description}
+        />
+        <MoreInfo
+          pressure={this.state.pressure}
+          humidity={this.state.humidity}
+          wind={this.state.wind}
+          clouds={this.state.cloudiness}
         />
       </div>
     );
