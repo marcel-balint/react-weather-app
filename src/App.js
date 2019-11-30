@@ -56,6 +56,11 @@ class App extends Component {
     this.setState({ moreInfo: true });
   };
 
+  convertToCelsius = temperatue => {
+    let celsius = Math.floor(temperatue - 273.15);
+    return celsius;
+  };
+
   render() {
     let showError = null;
     let showMoreInfo = null;
@@ -66,9 +71,9 @@ class App extends Component {
         <Weather
           city={this.state.city}
           country={this.state.country}
-          mainTemperature={this.state.mainTemperature}
-          temp_max={this.state.temp_max}
-          temp_min={this.state.temp_min}
+          mainTemperature={this.convertToCelsius(this.state.mainTemperature)}
+          temp_max={this.convertToCelsius(this.state.temp_max)}
+          temp_min={this.convertToCelsius(this.state.temp_min)}
           description={this.state.description}
           showInfo={this.handleMoreInfo}
         />
