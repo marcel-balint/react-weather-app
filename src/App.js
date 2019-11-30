@@ -18,34 +18,46 @@ class App extends Component {
     pressure: null,
     humidity: null,
     wind: null,
-    cloudiness: null
+    cloudiness: null,
+    error: false
   };
 
   getWeatherData = async e => {
     e.preventDefault();
-
-    const city = e.target.elements.text.value;
-    const getData = await fetch(
-      `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}`
-    );
-    const parsedData = await getData.json();
-    this.setState({
-      city: parsedData.name,
-      country: parsedData.sys.country,
-      mainTemperature: parsedData.main.temp,
-      temp_max: parsedData.main.temp_max,
-      temp_min: parsedData.main.temp_min,
-      description: parsedData.weather[0].description,
-      pressure: parsedData.main.pressure,
-      humidity: parsedData.main.humidity,
-      wind: parsedData.wind.speed,
-      cloudiness: parsedData.clouds.all
-    });
+    try {
+      const city = e.target.elements.text.value;
+      const getData = await fetch(
+        `http://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${Api_Key}`
+      );
+      const parsedData = await getData.json();
+      this.setState({
+        city: parsedData.name,
+        country: parsedData.sys.country,
+        mainTemperature: parsedData.main.temp,
+        temp_max: parsedData.main.temp_max,
+        temp_min: parsedData.main.temp_min,
+        description: parsedData.weather[0].description,
+        pressure: parsedData.main.pressure,
+        humidity: parsedData.main.humidity,
+        wind: parsedData.wind.speed,
+        cloudiness: parsedData.clouds.all,
+        error: false
+      });
+    } catch (error) {
+      this.setState({ error: true });
+    }
   };
 
   render() {
+    let showError = null;
+
+    if (this.state.error) {
+      showError = <p>Please type another city.</p>;
+    }
+
     return (
       <div className="App">
+        {showError}
         <Input showWeather={this.getWeatherData} />
         <Weather
           city={this.state.city}
