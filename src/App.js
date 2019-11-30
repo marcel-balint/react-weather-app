@@ -50,6 +50,22 @@ class App extends Component {
 
   render() {
     let showError = null;
+    let showWeather = null;
+
+    if (this.state.loaded) {
+      showWeather = (
+        <Weather
+          city={this.state.city}
+          country={this.state.country}
+          mainTemperature={this.state.mainTemperature}
+          temp_max={this.state.temp_max}
+          temp_min={this.state.temp_min}
+          description={this.state.description}
+        />
+      );
+    } else {
+      showWeather = null;
+    }
 
     if (this.state.error) {
       showError = <p>Please type another city.</p>;
@@ -59,14 +75,7 @@ class App extends Component {
       <div className="App">
         {showError}
         <Input showWeather={this.getWeatherData} />
-        <Weather
-          city={this.state.city}
-          country={this.state.country}
-          mainTemperature={this.state.mainTemperature}
-          temp_max={this.state.temp_max}
-          temp_min={this.state.temp_min}
-          description={this.state.description}
-        />
+        {showWeather}
         <MoreInfo
           pressure={this.state.pressure}
           humidity={this.state.humidity}
