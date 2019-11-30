@@ -1,0 +1,17 @@
+.MoreBox {
+  height: 0;
+  animation: opacity 1s 1;
+}
+
+.MoreBox p {
+  font-size: 19px;
+}
+
+@keyframes opacity {
+  0% {
+    opacity: 0.1;
+  }
+  100% {
+    opacity: 1;
+  }
+}

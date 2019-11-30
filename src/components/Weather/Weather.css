@@ -20,3 +20,20 @@
   border-radius: 4px;
   cursor: pointer;
 }
+
+.MoreBtn:hover {
+  background-color: #7ba1b3;
+}
+
+@keyframes scale {
+  0% {
+    transform: scale(0.2);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.Heading {
+  margin-bottom: 50px;
+}

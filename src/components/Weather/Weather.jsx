@@ -2,6 +2,9 @@ import React from "react";
 import classes from "./Weather.css";
 
 const Weather = props => {
+  let styles = "";
+  !props.hide ? (styles = "block") : (styles = "none");
+
   return (
     <div>
       <h3 className={classes.Heading}>
@@ -18,7 +21,13 @@ const Weather = props => {
         <p>
           Min: <strong>{props.temp_min}&deg;C</strong>
         </p>
-        <span onClick={props.showInfo}>More Info</span>
+        <span
+          style={{ display: styles }}
+          className={classes.MoreBtn}
+          onClick={props.showInfo}
+        >
+          More Info
+        </span>
       </div>
     </div>
   );

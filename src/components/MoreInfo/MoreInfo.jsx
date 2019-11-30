@@ -1,8 +1,9 @@
 import React from "react";
+import classes from "./MoreInfo.css";
 
 const MoreInfo = props => {
   return (
-    <div>
+    <div className={classes.MoreBox}>
       <p>
         Wind Speed: <strong>{props.wind} m/s </strong>
       </p>

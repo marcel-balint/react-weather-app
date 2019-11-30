@@ -80,6 +80,7 @@ class App extends Component {
           temp_min={this.convertToCelsius(this.state.temp_min)}
           description={this.capitalizeFirst(this.state.description)}
           showInfo={this.handleMoreInfo}
+          hide={this.state.moreInfo}
         />
       );
     } else {
