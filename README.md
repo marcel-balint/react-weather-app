@@ -16,6 +16,25 @@ Weather application build with React which uses [OpenWeatherMap](https://openwea
 - CCS
 - React (JavaScript Framework)
 
+## Deployment
+
+This project was deployed on the GitHub pages with the following steps:
+
+- installed gh-pages package:
+
+`npm install --save gh-pages`
+
+- modified the `package.json` file of the by adding the following:
+
+  - `https://[my-user-name].github.io/[my-repo-name]/`
+  - in the `scripts` object added:
+    - `“predeploy”: "npm run build"`
+    - `"deploy": "gh-pages -d build"`
+
+- deployed the application by typing:
+
+`npm run deploy`
+
 ## Getting started
 
 These instructions will get you a copy of the project up and running on your local machine.
