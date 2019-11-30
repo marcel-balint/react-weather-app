@@ -1,10 +1,16 @@
 import React from "react";
+import classes from "./Input.css";
 
 const Input = props => (
-  <div>
+  <div className={classes.InputBox}>
     <form onSubmit={props.showWeather}>
-      <input type="text" name="text" placeholde="Type a city.."></input>
-      <button>Search</button>
+      <input
+        className={classes.Input}
+        type="text"
+        name="text"
+        placeholder="Type a city.."
+      ></input>
+      <button className={classes.Search}>Search</button>
     </form>
   </div>
 );

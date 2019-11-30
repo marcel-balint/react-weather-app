@@ -1,0 +1,31 @@
+.InputBox {
+  margin-top: 130px;
+}
+
+.Input {
+  width: 300px;
+  padding: 5px 5px 7px 5px;
+  border-radius: 2px;
+  border: 1px solid #ccc;
+  font-weight: bold;
+  font-size: 15px;
+}
+
+.Input:focus {
+  outline: none;
+  background-color: rgb(246, 246, 246);
+}
+
+.Input::placeholder {
+  opacity: 0.4;
+}
+
+.Search {
+  padding: 8px;
+  border: 0;
+  text-transform: uppercase;
+  color: #fff;
+  font-weight: bold;
+  background-color: #179da1;
+  cursor: pointer;
+}
