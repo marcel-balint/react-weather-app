@@ -24,7 +24,7 @@ This project was deployed on the GitHub pages with the following steps:
 
 `npm install --save gh-pages`
 
-- modified the `package.json` file of the by adding the following:
+- modified the `package.json` file by adding the following:
 
   - `https://[my-user-name].github.io/[my-repo-name]/`
   - in the `scripts` object added:
