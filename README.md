@@ -13,3 +13,27 @@ Weather application build with React which uses [OpenWeatherMap](https://openwea
 
 - CCS
 - React (JavaScript Framework)
+
+## Getting started
+
+These instructions will get you a copy of the project up and running on your local machine.
+
+### Prerequisites
+
+Things you need to install the software and how to install them:
+
+- npm : `npm install npm@latest -g`
+
+### Installing
+
+1. Clone the repo:
+
+`git clone https://github.com/marcel-balint/react-weather-app.git`
+
+2.Run npm install inside project root directory:
+
+`npm install`
+
+3.Start the server:
+
+`npm start`
