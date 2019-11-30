@@ -11,7 +11,8 @@ class App extends Component {
     country: null,
     mainTemperature: null,
     temp_max: null,
-    temp_min: null
+    temp_min: null,
+    description: ""
   };
 
   getWeatherData = async e => {
@@ -27,7 +28,8 @@ class App extends Component {
       country: parsedData.sys.country,
       mainTemperature: parsedData.main.temp,
       temp_max: parsedData.main.temp_max,
-      temp_min: parsedData.main.temp_min
+      temp_min: parsedData.main.temp_min,
+      description: parsedData.weather[0].description
     });
   };
 
